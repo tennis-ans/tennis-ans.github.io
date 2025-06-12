@@ -1,0 +1,392 @@
+[Event: 2024 Australian Open Men's Doubles Final]
+[Players: X = Vavassori, Y = Bolelli, Z = Bopanna, W = Ebden]
+[Video Url: https://www.youtube.com/watch?v=mC_pSNURbzU&t=3933s]
+
+# Time: 2:46
+1. XsC6, (B0, D4, B6, E9)
+2. WfB6, (A1, C4, B6, D9)
+3. XbD6, (A1, D4, B6, E8)
+4. WfE1, (A0, C4, B6, E9)
+ZV
+
+# Time 6:12
+1. XsD6, (C0, C4, B8, E9)
+2. WbD4, (C1, D4, B8, E9)
+3. YvD5, (C1, E4, B8, E9)
+XV
+
+# Time 8:21
+1. WsC6, (C0, C4, B6, E9)
+2. YfA3, (C2, C4, B6, C9)
+3. WoD5, (A3, C4, B6, D9)
+ZV
+
+# Time 16:42
+1. ZsE6, (C0, C3, B6, E9)
+2. YbC4, (C1, C4, B6, E8)
+3. WoB5, (C1, C4, B6, E8)
+ZV
+
+# Time 17:06
+1. ZsA6, (C0, C3, C6, A9)
+2. XfD3, (E1, B3, D6, A9)
+3. ZfD5, (E1, B4, D5, A9)
+4. YvC3, (E1, C3, D5, B9)
+5. WlE7, (D1, B3, C4, B8)
+6. XfD1, (C0, C4, C5, E1)
+7. ZfD7, (D0, C4, C5, E8)
+8. XfB4, (D0, C4, C5, E8)
+9. WvB7, (C0, B4, C5, D8)
+ZV
+
+# Time 19:40
+1. XsB6, (D0, B4, D6, A9)
+2. ZbB4, (D1, B4, D6, A8)
+3. YvD6, (D1, B4, D6, A8)
+4. WvD3, (D1, C4, D6, B8)
+5. XfE6, (D1, C3, C5, B9)
+XV
+
+# Time 20:19
+1. XsD6, (B0, D4, B6, E9)
+2. WbC4, (B1, C4, B6, E8)
+3. YvB6, (C0, C4, B6, D9)
+XV
+
+
+# Time 21:39
+1. XsD6, (B0, D4, B6, E9)
+2. WfC4, (A1, D4, B6, E9)
+3. YvB5, (A1, C4, B6, E9)
+XV
+
+# Time 26:38
+1. YsB6, (C4, C0, A9, D8)
+2. ZlC3, (B4, C2, A8, D8)
+3. XoD6, (C3, D3, B9, E9)
+XV
+
+# Time: 27:30
+1. YsB6, (C4, C0, A9, D8) 
+2. ZlC3, (C4, C2, A9, D8)
+3. YoB5, (C4, C3, A9, D9)
+XV
+
+# Time: 28:57
+1. ZsC6, (C0, C4, B6, E9)
+2. YfC4, (C1, C4, B6, D8)
+3. WvA6, (C1, C4, B6, C9) 
+ZV
+
+# Time: 29:45
+1. ZsD6, (C0, C4, B6, E9)
+2. YbE3, (C8, C4, B6, E8) 
+XV
+
+# Time: 32:34
+1. XsC5, (B0, B4, B6, E9)
+2. WfB1, (B1, B4, B6, E9)
+3. XbD7, (B1, B4, C9, E8)
+4. WfB3, (A0, B4, B7, E9)
+5. XfB7, (A0, B4, B6, E9)
+6. WfB3, (A0, B4, B6, E9)
+7. XbA6, (A0, B4, B6, E9)
+8. ZvC3, (A8, B4, A6, E9) 
+ZV
+
+# Time: 33:52
+1. XsC6, (C0, C4, D8, A9)
+2. WfC4, (C1, C4, D8, B8)
+3. YvB5, (C1, C4, D8, B8) 
+XV
+
+# Time: 34:23
+1. XsB6, (D0, B4, D8, A9)
+2. ZfB4, (D1, B4, D8, A8)
+3. YvD6, (D1, B4, D8, A8)
+4. WbE1, (D0, C4, D7, B9)
+5. XfA6, (E0, C3, D6, B9) 
+XF
+
+# Time: 34:54
+1. XsD6, (C0, C4, B8, E9)
+2. WfD4, (C1, C4, B8, E9)
+3. YvE5, (B1, D4, B8, E9)
+4. WbD4, (B1, C4, B8, E9)
+5. YoE7, (C2, C3, A9, E9)
+XV
+
+# Time: 36:17
+1. WsC6, (B6, E9, C4, C0)
+2. YfD2, (B6, D9, C4, C1)
+3. WfD5, (C5, D9, C4, E1)
+4. XvC1, (D5, E9, C4, E1)
+5. WbA7, (E5, C0, C3, C0)
+6. YfC4, (C6, A8, C4, A3)
+7. ZvD5, (C6, A8, C4, A3)
+8. XfA2, (D5, B8, D3, C3)
+XV
+
+# Time: 37:06
+1. WsB6, (A9, D6, C4, C0)
+2. XbA3, (A8, D6, C4, C1)
+XV
+
+# Time: 39:48
+1. WsC6, (A9, C6, C4, C0)
+2. XbD2, (B8, D6, C4, C1)
+3. WfC6, (B9, C6, B4, C1)
+4. YvC4, (B9, D5, B4, C0)
+5. WbB6, (B9, D5, C4, C2)
+6. XfB4, (A8, C5, C4, B3)
+7. WvC6, (A8, C6, C4, B4)
+8. YfC4, (B8, C6, C4, B4)
+9. WvD6, (C8, C6, C3, C4)
+ZF
+
+# Time: 41:38
+1. WsC6, (B6, E9, C4, C0)
+2. YfD3, (B6, D8, C4, C1)
+3. WfE8, (C5, D9, C4, C1)
+4. YfD3, (C5, E9, C4, C0)
+5. WfD6, (C5, E9, C4, D0)
+6. YfD2, (C5, E9, C4, C0)
+7. WfE6, (C5, D9, C4, D0)
+8. YfD4, (C5, E9, C4, C0)
+9. WfD6, (C5, E9, C4, D0)
+10. YfA2, (C5, E9, C4, C0)
+XV
+
+# Time: 47:45
+1. XsC6, (B0, D4, B6, E9)
+2. WfB2, (B1, C4, B6, E8)
+3. XfA6, (A0, C4, B6, E9)
+4. ZvC2, (E9, D4, A6, E9)
+ZV
+
+# Time: 49:16
+1. WsC6, (B6, E9, C4, C0)
+2. YfE1, (B6, D8, C4, C1)
+3. WfE6, (C5, D9, C4, E0)
+4. YbD4, (C5, E9, C4, D0)
+5. WfE7, (C5, E9, C4, D0)
+6. YfE4, (C5, E9, D4, D3)
+7. ZvC6, (C6, E9, E4, E3)
+ZF
+
+# Time: 50:26
+1. YsD6, (C4, C0, B6, E9)
+2. WbD3, (C4, C1, B6, D8)
+3. YfC6, (C4, E1, C6, D7)
+4. ZvE1, (C4, E1, D6, D6)
+5. YlE6, (C3, E0, C5, E6)
+6. WoB6, (B6, C0, C5, E6)
+ZF
+
+# Time: 51:26
+1. YsB6, (C4, C0, A9, E8)
+2. ZbB4, (C4, C1, A8, E8)
+3. XvD6, (B4, C2, A7, E7)
+4. ZfE1, (B4, C3, C6, E6)
+ZV
+
+# Time: 52:05
+1. XsC6, (C0, C4, B8, E9)
+2. WfC4, (C1, C4, B8, D9)
+3. YvE5, (C1, C4, B8, C9)
+XV
+
+# Time: 52:51
+1. XsD6, (C0, C4, B8, E9)
+2. WlA1, (C1, C1, B8, E9)
+3. XfC8, (A0, D4, C9, D9)
+4. WfE4, (A0, C4, C9, D9)
+ZV
+
+# Time: 55:05
+1. ZsD6, (B6, E9, C0, C4)
+2. YbC4, (B5, E8, C1, C4)
+3. WvB5, (B5, E8, C0, C4)
+ZF
+
+# Time: 58:21
+1. YsD6, (C4, C0, B6, E9)
+2. WfE3, (C4, C1, B6, E8)
+3. YfD7, (C4, E0, C5, E8)
+4. WfD4, (C4, E0, C5, E9)
+5. XvC6, (D4, E0, C5, E9)
+XV
+
+# Time: 59:47
+1. YsE6, (C4, C0, B6, E9)
+2. WbD4, (C4, B1, B6, E8)
+3. XvC5, (D4, B3, B6, E7)
+XV
+
+# Time: 1:04:55
+1. XsC6, (D0, B4, A9, D8)
+2. ZlA4, (D1, C4, A9, D8)
+3. YoD5, (C1, A4, B9, E9)
+XV
+
+# Time: 1:05:30
+1. XsD6, (C0, C4, B6, E8)
+2. WbC4, (C1, C4, B6, D8)
+3. YvA5, (C1, C4, B6, D8)
+4. ZfA4, (D1, B4, D8, A6)
+5. YvB6, (D1, A4, C7, A6)
+6. WfC4, (D2, B4, B8, A6)
+7. YvD5, (D2, C4, B6, E9)
+XV
+
+# Time: 1:06:40
+1. XsD6, (C0, C4, B6, E9)
+2. WfC4, (C1, C4, B6, E8)
+3. YvC6, (C1, C4, B6, E8)
+4. ZbC4, (C0, C4, B6, E8)
+ZF
+
+# Time: 1:08:14
+1. ZsC6, (A9, D6, C0, C4)
+2. WbD6, (B8, D6, C1, C4)
+3. YvD6, (B8, D6, C1, C4)
+4. YvD6, (B8, D6, C0, C4)
+5. WvD6, (B8, D6, C1, C4)
+ZF
+
+# Time: 1:08:37
+1. ZsC6, (B6, E9, C0, C4)
+2. YlB2, (C9, B6, C1, C4)
+3. ZoD6, (E9, B9, C4, B2)
+4. YlC4, (E9, B9, C4, B2)
+5. WoD6, (A9, E9, C3, D3)
+ZV
+
+# 1:09:07
+1. ZsA6, (A9, D6, C0, C4)
+2. XfB4, (A8, D6, C1, C4)
+3. WvD5, (A8, D6, C1, B4)
+4. YbC3, (B8, D6, C1, C4)
+5. ZfE6, (B9, C5, B1, B4)
+ZV
+
+# Time: 1:09:52
+1. YsB6, (C4, C0, A9, D8)
+2. ZbB4, (C4, C1, A8, D8)
+3. XvE5, (B4, C3, A8, D8)
+XV
+
+# Time: 1:13:30
+1. YsD6, (C4, C0, B6, E9)
+2. WbE1, (C4, C2, B6, E8)
+ZV
+
+# Time: 1:16:56
+1. WsC6, (D4, C0, B6, E9)
+2. YlD2, (D4, C1, B6, C9)
+3. WoC6, (D4, D1, B6, D9)
+ZV
+
+# Time: 1:18:28
+1. WsA6, (A9, D8, C4, C0)
+2. XfE1, (A8, D8, B4, C1)
+3. WfD6, (A9, D8, B4, E0)
+4. YfB3, (B6, D7, B3, D0)
+5. ZvC6, (B6, D6, B3, D0)
+6. XvD2, (B6, C6, B3, D0)
+7. WfE6, (C5, D6, C3, E0)
+ZF
+
+# Time: 1:21:01
+1. XsB6, (D0, B4, A9, D8)
+2. ZfB4, (D1, B4, A8, D8)
+3. YvD5, (D1, B4, A8, D8)
+4. WbE2, (C1, C4, C8, E7)
+5. XfA7, (E1, D4, B9, E5)
+XV
+
+# Time: 1:21:36
+1. XsC6, (C0, C4, B8, E9)
+2. WfB3, (B1, C4, B8, D8)
+3. XfD6, (A1, C4, B6, E9)
+4. WfB1, (A0, D4, B6, E9)
+5. XfD5, (A0, D4, A5, E9)
+6. WfB3, (A0, D4, B5, E9)
+7. XfD7, (A0, D4, C5, E9)
+XV
+
+# Time: 1:23:44
+1. ZsC6, (A9, D6, C0, C4)
+2. XlB3, (A8, D6, C1, B4)
+3. ZvD6, (B9, D6, B3, B4)
+4. YvC3, (B9, D6, B3, B4)
+5. ZfA7, (B9, C6, C2, B4)
+6. XfD2, (A9, D5, D1, B4)
+7. ZlD5, (A9, D5, E0, B4)
+8. YoB1, (C9, E6, D0, B4)
+XV
+
+# Time: 1:25:03
+1. ZsB6, (A9, D6, C0, C4)
+2. XbB4, (B8, D6, C1, B4)
+3. WvD6, (B8, D6, C1, B4)
+4. YvC4, (B8, C6, C1, C4)
+5. WvD5, (B8, C6, C1, C4)
+ZV
+
+# Time: 1:26:34
+1. ZsC6, (B6, E9, C0, C4)
+2. YfC4, (B6, D8, C1, C4)
+3. WvA5, (B6, C9, C1, B4)
+4. XfC3, (A6, C7, C1, A4)
+5. ZbC8, (A6, C8, D2, A3)
+6. YfD4, (D5, C9, D1, D3)
+7. ZfE8, (C5, D9, D1, D3)
+8. YfD2, (C6, E9, D0, C4)
+9. ZfD8, (C5, E9, D0, C4)
+10. YlC4, (C5, D9, D0, D4)
+11. WvB5, (D6, E9, B1, C4)
+ZV
+
+# Time: 1:29:34
+1. YsD6, (C4, C0, B8, E9)
+2. XbE3, (C4, C1, B8, D9)
+3. YfB7, (B4, D1, B9, D9)
+4. ZfD3, (C4, D9, B9, D8)
+5. YfC5, (B4, E9, A9, D6)
+6. WvB4, (B4, D0, B9, C5)
+ZF
+
+# Time: 1:32:30
+1. WsB6, (A8, B6, C4, C0)
+2. XfD2, (A8, B6, B4, C1)
+3. WfE8, (B9, C5, B4, D1)
+ZV
+
+# Time: 1:33:14
+1. WsD6, (B5, E9, C4, C0)
+2. YfD4, (B5, E8, C4, C1)
+3. ZvD5, (B5, E8, D4, C0)
+ZV
+
+# Time: 1:33:45
+1. WsC6, (A9, D6, C4, C0)
+2. XlD6, (B8, D6, C4, C1)
+3. YoB5, (C9, D6, B4, C1)
+XV
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
