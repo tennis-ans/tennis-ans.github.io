@@ -1,10 +1,10 @@
-[Event: 2024 Australian Open Doubles Final (ATP)]
+[Event: 2024 Australian Open Men's Doubles Final]
 [Players: X = Vavassori, Y = Bolelli, Z = Bopanna, W = Ebden]
 [Video Url: https://www.youtube.com/watch?v=mC_pSNURbzU&t=3933s]
 
 # Time: 2:46
 1. XsC6, (B0, D4, B6, E9)
-2. WfB6, (A1, C4, B6, D9)
+2. WfB3, (A1, C4, B6, D9)
 3. XbD6, (A1, D4, B6, E8)
 4. WfE1, (A0, C4, B6, E9)
 ZV

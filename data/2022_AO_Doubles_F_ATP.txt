@@ -10,7 +10,7 @@ YV
 
 # Time: 1:16
 1. XsC6, (C0, C4, A9, D9)
-2. ZbE6, (C1, C4, B8, D9)
+2. ZbE3, (C1, C4, B8, D9)
 ZV
 
 # Time: 2:42
