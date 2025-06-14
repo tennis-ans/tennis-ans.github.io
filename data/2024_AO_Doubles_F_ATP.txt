@@ -1,4 +1,4 @@
-[Event: 2024 Australian Open Men's Doubles Final]
+[Event: 2024 Australian Open Doubles Final (ATP)]
 [Players: X = Vavassori, Y = Bolelli, Z = Bopanna, W = Ebden]
 [Video Url: https://www.youtube.com/watch?v=mC_pSNURbzU&t=3933s]
 
