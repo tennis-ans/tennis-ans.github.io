@@ -1,0 +1,381 @@
+[Event: 2025 Mutua Madrid Open Women's Singles Final]
+[Players: X = Coco Gauff, Y = Aryna Sabalenka]
+[Video Url: https://www.youtube.com/watch?v=_O-4_IJFIjQ]
+
+# Time: 1:47
+1. XsA6, (XD0, YA9) 
+2. YfD2, (XC1, YA9)
+3. XfB7, (XE0, YA9)
+4. YfD6, (XD0, YB9)
+5. XfB6, (XD0, YC9)
+6. YfA1, (XC0, YC9)
+YV
+
+# Time: 2:47
+1. XsB6, (XD0, YA9)
+2. YbC3, (XC1, YA9)
+3. XfA6, (XC0, YC9)
+4. YbC4, (XC1, YE9)
+5. XfA7, (XB3, YC9)
+6. YldB4, (XB4, YA9)
+7. XoC6, (XB4, YC9)
+XV
+
+# Time: 5:02
+1. XsC6, (XD0, YA9)
+2. YrC4, (XC1, YC9)
+3. XoB5, (XC4, YC9)
+XV
+
+# Time: 5:31
+1. XsD6, (XB0, YE9)
+2. YrC3, (XC0, YE9)
+3. XrD7, (XB1, YD9)
+4. YbD2, (XC0, YC8)
+5. XfC5 (XD0, YC6)
+6. YfD8, (XC0, YC6)
+YV
+
+# Time: 6:02
+1. XfA6, (XD0, YA9)
+2. YfC3, (XC1, YA9)
+3. XbB6, (XD1, YB9)
+XV
+
+# Time: 7:47
+1. YsB6, (YD0, XA9)
+2. XfC3, (YC0, XA9)
+3. YfC6, (YC0, XB9)
+4. XfD2, (YC0, XC9)
+5. YfC6, (YD0, XC9)
+6. XbB3, (YC0, XC9)
+7. YbB6, (YC0, XC9)
+8. XfD3, (YC0, XB9)
+9. YfE7, (YD0, XC9)
+10. XbB3, (YC0, XE9)
+11. YbA7, (YA1, XD9)
+YV
+
+# Time: 10:11
+1. XsB5, (XD0, YA9)
+2. YfB2, (XC0, YA9)
+YV
+
+# Time: 10:45
+1. XsD5, (XB0, YA9)
+2. YfB3, (XC0, YA9)
+YV
+
+# Time: 12:08
+1. YsB6, (YD0, XA9)
+2. XfB3, (YC1, XA9)
+3. YrD6, (YB0, XB9)
+4. XrD3, (YC1, XB8)
+6. YfD7, (YB2, XC9)
+7. XlcC3, (YB3, XB9)
+8. YoA7, (YC3, XB9)
+YV
+
+# Time: 14:30
+1. XsB6, (XD0, YA9)
+2. YfD3, (XD1, YA9)
+YV
+
+# Time: 14:52
+1. XsD6, (XB0, YE9)
+2. YbD1, (XC0, YE9)
+3. XfB6, (XC0, YE9)
+4. YfB7, (XC0, YC9)
+5. XbB6, (XA0, YC8)
+6. YfB3, (XC0, YB6)
+7. XbcC5, (XB3, YC6)
+8. YvD6, (XB3, YC5)
+YV
+
+# Time: 17:35
+1. YsD6, (YB0, XE9)
+2. XbD2, (YB0, XE9)
+3. YfB6, (YC0, XD9)
+4. XfB3, (YC0, XA9)
+5. YbC8, (YB0, XA8)
+6. XbA1, (YC0, XC0)
+7. YbD6, (YA0, XC0)
+8. XbD2, (YB0, XE8)
+9. YfB6, (YC0, XD8)
+10. XeB4, (YC0, XB8)
+XV
+
+# Time: 21:22
+1. XsC6, (XD0, YA9)
+2. YbB4, (XC1, YA9)
+3. XeD5, (XB2, YC9)
+XV
+
+# Time: 22:42
+1. XsE6, (XB0, YE9)
+2. YbD3, (XB1, YE9)
+3. XfD6, (XC0, YE9)
+XV
+
+# Time: 26:09
+1. YsC6, (YB0, XE9)
+2. XfB2, (YB1, XD9)
+3. YfE6, (YA0, XC9)
+4. XbC3, (YA0, XE9)
+5. YfA6, (YC2, XC9) 
+6. XfcC3, (YC3, XA9)
+7. YveD5, (YC3, XA9)
+YV
+
+# Time: 26:43
+1. YsB6, (YD0, XA9)
+2. XfC3, (YC0, XA9)
+3. YbD6, (YD1, XB9)
+4. XbD3, (YC0, XC9)
+5. YfA6, (YC0, XC9)
+6. XfD3, (YC0, XA9)
+7. YrA6, (YD1, XB9)
+8. XfB3, (YD0, XA2)
+XV
+
+# Time: 29:43
+1. XsB5, (XD0, YA9)
+2. YfD1, (XC0, YC9)
+3. XfD6, (XD0, YC9)
+4. YeE4, (XC0, YC8)
+5. XlcC3, (XE3, YC3)
+6. YoB3, (XD3, YC3)
+YV
+
+# Time: 32:07
+1. XsB6, (XD0, YA9)
+2. YfD1, (XC0, YC0)
+3. XbD7, (XB0, YC9)
+4. YeA4, (XC0, YD8)
+5. XbB8, (XA3, YD8)
+XV
+
+# Time: 33:18
+1. YsB6, (YD0, XA9)
+2. XfB4, (YD0, XA9)
+3. YbD6, (YC0, XB9)
+4. XbB8, (YC0, XE9)
+5. YbD6, (YC0, XD9)
+6. XbC3, (YC0, XE9)
+7. YbD7, (YB1, XD9)
+YV
+
+# Time: 34:02
+1. YsD6, (YB0, XE9)
+2. XbB3, (YB0, XE9)
+3. YrC6, (YA0, XC9)
+4. XfA8, (YC0, XD7)
+XV
+
+# Time: 34:33
+1. YsC6, (YD0, XA9)
+2. XbC3, (YC1, XD9)
+3. YfB2, (YB3, XC9)
+YV
+
+# Time: 35:12
+1. YsC5, (YB0, XE9)
+2. XfC3, (YB1, XD9)
+3. YbB6, (YC0, XD8)
+4. XfD7, (YC0, XB8)
+5. YfE8, (YD1, XB9)
+6. XrC4, (YE0, XB9)
+7. YfB5, (YB3, XC9)
+YV
+
+# Time: 35:46
+1. YsD6, (YD0, XA9) 
+2. XfC3, (YC1, XA9)
+3. YbD6, (YD1, XD9)
+4. XbdC3, (YC2, XD9)
+5. YvA8, (YC3, XE9)
+YV
+
+# Time: 37:34
+1. XsC5, (XB0, YE9) 
+2. YfC2, (XB1, YD8)
+3. XfB7, (XB0, YC9)
+4. YfC2, (XC0, YA9)
+5. XfD6, (XC0, YC9)
+XV
+
+# Time: 39:30
+1. XsB6, (XD0, YA9)
+2. YbE6, (XC1, YA9)
+3. XfD1, (XE0, YB0)
+4. YbC3, (XD0, YD9)
+5. XfA7, (XB1, YD9)
+XV
+
+# Time: 42:28
+1. YsD6, (YB0, XE9)
+2. XfD1, (YC1, XE9)
+3. YfB7, (YD0, XD9)
+4. XfD6, (YC0, XA9)
+5. YfA8, (YD0, XB9)
+6. XrB4, (YD0, XA9)
+7. YrA5, (YC3, XC9)
+8. XfA2, (YC4, XB6)
+XV
+
+# Time: 44:34
+1. XsB6, (XD0, YA9)
+2. YfC3, (XD1, YA9)
+3. XbE7, (XD1, YA9)
+XV
+
+# Time: 45:30
+1. XsC6, (XD0, YA9)
+2. YbC3, (XC1, YA9)
+3. XfD7, (XC0, YC9)
+4. YbC3, (XC0, YD9)
+5. XbE7, (XC0, YC9)
+6. YrD4, (XC0, YE9)
+7. XrE7, (XC2, YD9)
+XV
+
+# Time: 46:15
+1. YsB6, (YD0, XA9)
+2. XfE1, (YC1, XA9)
+3. YfE6, (YD0, XB9)
+YV
+
+# Time: 46:51
+1. YsD6, (YB0, XE9)
+2. XbD3, (YB0, XE9)
+3. YfC7, (YC1, XD9)
+4. XbB3, (YC0, YC9)
+5. YbA7, (YB0, YC9)
+YV
+
+# Time: 47:19
+1. YsE6, (YD0, XE9)
+2. XfC3, (YD1, XE9)
+3. YbD8, (YD1, XE9)
+YV
+
+# Time: 48:34
+1. XsD6, (XB0, YE9)
+2. YfD2, (XB1, YE9)
+3. XfB8, (XD0, YC9)
+4. YfD3, (XD0, YB9)
+5. XfE7, (XE0, YB9)
+XV
+
+# Time: 53:07
+1. XsD5, (XB0, YE9)
+2. YfA1, (XC0, YE9)
+YV
+
+# Time: 53:35
+1. XsB6, (XD0, YA9)
+2. YfC2, (XC1, YA9 )
+3. XfB6, (XC0, YA9)
+4. YfC3, (XC0, YB9)
+5. XfE7, (XC0, YC9)
+XV
+
+# Time: 54:40
+1. YsA6, (YD0, XA9)
+2. XfC3, (YD0, XA9)
+3. YfD6, (YC1, XB9)
+4. XbD4, (YC1, XD9)
+5. YfD8, (YC2, XC9)
+YV
+
+# Time: 55:09
+1. YsD6, (YB0, XE9)
+2. XbD3, (YB0, XE9)
+3. YfA8, (YC1, XD9)
+YV
+
+# Time: 57:24
+1. XsB5, (XD0, YA9)
+2. YfB3, (XC0, YB9)
+3. XbE8, (XC0, YC9)
+4. YbB1, (XC0, YE9)
+5. XfB7, (XA0, YD9)
+6. YfC3, (XD0, YD1)
+7. XfD8, (XC1, YC9)
+XV
+
+# Time: 1:00:26
+1. XsD5, (XB0, YE9)
+2. YfC2, (XC1, YE9)
+3. XbD7, (XC0, YC9)
+4. XbB3, (XC1, YE9)
+5. YfB6, (XA3, YE9) 
+YV
+
+# Time: 1:05:27
+1. XsD5, (XB0, YE9)
+2. YbC3, (XC1, YE9)
+3. XfB7, (XC0, YD9)
+XV
+
+# Time: 1:06:35
+1. XsC6, (XB0, YE9)
+2. YfD2, (XC0, YD9)
+3. XfD5, (XC0, YC9)
+4. YbD2, (XC0, YC8)
+5. XfB5, (XD0, YC6)
+6. YfC1, (XD0, YC3)
+7. XfA7, (XC0, YC4)
+XV
+
+# Time: 1:16:25
+1. XsB5, (XD0, YA9)
+2. YfD3, (XC0, YD9)
+3. XfE6, (XE1, YC9)
+4. YrB3, (XD0, YE9)
+5. XbB6, (XC2, YD9)
+6. YrdB4, (XC3, YA9)
+7. XvC5, (XD4, YD8)
+8. YbdD3, (XD4, YE7)
+9. XvB6, (XD3, YE6)
+XV
+
+# Time: 1:18:45
+1. XsA6, (XD0, YA9)
+2. YfD2, (XD1, YA9)
+3. XfA7, (XD0, YA9)
+XV
+
+# Time: 1:20:15
+1. YsB5, (YD0, XA9)
+2. XfD1, (YD0, XA9)
+3. YfD7, (YC0, XA8)
+4. XbD3, (YC0, XC9)
+5. YfB8, (YC0, XC9,)
+6. XfD3, (YC0, XA9)
+7. YfB7, (YD0, XB9)
+8. XfB2, (YC0, XA9)
+9. YbB6, (YB0, XC9)
+10. XrC2, (YC1, XB9)
+11. YfA7, (YB1, XC9)
+12. XrC3, (YC1, XA9)
+13. YeB5, (YC2, XB9)
+14. XfB3, (YC1, XB6)
+15. YbA8, (YB1, YB5)
+YV
+
+# Time: 1:21:40
+1. XsA6, (XD0, YA9)
+2. YfD3, (XD1, YA9)
+3. XfC6, (XD0, YA9)
+4. YbB1, (XC0, YB9)
+5. XbB7, (XB0, YC9)
+6. YfB3, (XC0, YC9)
+7. XbE6, (XB0, YC9)
+8. YbB5, (XB0, YE8) 
+YV
+
+# Time: 1:22:18
+1. YsC6, (YB0, XE9)
+2. XfD1, (YB1, XD9)
+XV
