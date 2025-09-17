@@ -205,24 +205,266 @@
             <div class="tool-card">
                 <h3>📈 Match Statistics Analyzer</h3>
                 <p>Generate comprehensive match statistics from your charted TANS data. Analyze player patterns, shot distributions, and tactical insights.</p>
-                <a href="https://colab.research.google.com/drive/1beE7YHiFwrfMgb3Ac9UIZZLVzAAe3RH-?usp=sharing" target="_blank" class="tool-link">
-                    Open Analysis Tool →
-                </a>
+                <div id="analysis-upload" style="margin-bottom:20px;">
+                    <input type="file" id="fileInput" accept=".txt" style="display:none">
+                    <div id="dropZone" style="border:2px dashed #4CAF50; border-radius:10px; padding:30px; text-align:center; background:#e8f5e8; color:#2E7D32; cursor:pointer;">
+                        <strong>Drag & drop your TANS .txt file here, or click to select</strong>
+                    </div>
+                </div>
+                <div id="analysisResults" style="background:#f8f9fa; border-radius:10px; padding:20px; margin-top:10px; color:#333; display:none;"></div>
             </div>
             
             <div class="tool-card">
                 <h3>🔄 TennisAbstract Converter</h3>
                 <p>Export your TANS charted data into TennisAbstract's format for compatibility with existing tennis analysis tools.</p>
-                <a href="https://colab.research.google.com/drive/1BmstgR5S5B4qIA-3ZC9R7rxO0aQKExjM?usp=sharing" target="_blank" class="tool-link">
-                    Open Converter Tool →
-                </a>
+                <div id="convert-upload" style="margin-bottom:20px;">
+                    <input type="file" id="convertFileInput" accept=".txt" style="display:none">
+                    <div id="convertDropZone" style="border:2px dashed #4CAF50; border-radius:10px; padding:30px; text-align:center; background:#e8f5e8; color:#2E7D32; cursor:pointer;">
+                        <strong>Drag & drop your TANS .txt file here, or click to select</strong>
+                    </div>
+                </div>
+                <div id="convertResults" style="background:#f8f9fa; border-radius:10px; padding:20px; margin-top:10px; color:#333; display:none;"></div>
             </div>
         </div>
-        
-        <div class="tip">
-            <strong>💡 Quick Tip:</strong> Click <code>File > Save a copy in Drive</code> in Google Colab to create your own editable version of these tools.
-        </div>
     </div>
+    <script>
+    // --- Drag & Drop UI ---
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const analysisResults = document.getElementById('analysisResults');
+
+    dropZone.addEventListener('click', () => fileInput.click());
+    dropZone.addEventListener('dragover', e => {
+        e.preventDefault();
+        dropZone.style.background = '#C8E6C9';
+    });
+    dropZone.addEventListener('dragleave', e => {
+        dropZone.style.background = '#e8f5e8';
+    });
+    dropZone.addEventListener('drop', e => {
+        e.preventDefault();
+        dropZone.style.background = '#e8f5e8';
+        handleFile(e.dataTransfer.files[0]);
+    });
+    fileInput.addEventListener('change', e => {
+        if (fileInput.files.length) handleFile(fileInput.files[0]);
+    });
+
+    function handleFile(file) {
+        if (!file || !file.name.endsWith('.txt')) {
+            analysisResults.style.display = 'block';
+            analysisResults.innerHTML = '<span style="color:red">Please upload a .txt file.</span>';
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const lines = e.target.result.split(/\r?\n/);
+            runAnalysis(lines);
+        };
+        reader.readAsText(file);
+    }
+
+    // --- Analysis Logic (JS port of your Python) ---
+    function extractRalliesByTime(lines) {
+        const rallies = [];
+        let current = [];
+        for (let line of lines) {
+            line = line.trim();
+            if (line.startsWith('# Time')) {
+                if (current.length) {
+                    rallies.push(current);
+                    current = [];
+                }
+            }
+            if (line && !line.startsWith('[')) {
+                current.push(line);
+            }
+        }
+        if (current.length) rallies.push(current);
+        return rallies;
+    }
+
+    function analyzeServingPoint(rallies) {
+        let totalPoints = 0, serverWon = 0;
+        for (let rally of rallies) {
+            let winner = null, winnerLineIndex = null;
+            for (let j = 0; j < rally.length; ++j) {
+                if (/^[XYZW][VF]$/.test(rally[j])) {
+                    winner = rally[j][0];
+                    winnerLineIndex = j;
+                    break;
+                }
+            }
+            if (winnerLineIndex !== null) {
+                for (let k = 0; k < winnerLineIndex; ++k) {
+                    const match = rally[k].match(/\d+\.\s*([^\(]+)/);
+                    if (match) {
+                        const pointId = match[1].trim().split(',')[0];
+                        const server = pointId[0];
+                        totalPoints++;
+                        if (winner === 'X' && ['X','Y'].includes(server)) serverWon++;
+                        else if (winner === 'Z' && ['Z','W'].includes(server)) serverWon++;
+                        break;
+                    }
+                }
+            }
+        }
+        return totalPoints > 0 ? serverWon / totalPoints : 0;
+    }
+
+    function extractLastShots(rallies) {
+        let totalPoints = 0, forehandWinner = 0, backhandWinner = 0;
+        for (let rally of rallies) {
+            let winnerLineIndex = null;
+            for (let j = 0; j < rally.length; ++j) {
+                if (/^[XYZW][VF]$/.test(rally[j])) {
+                    winnerLineIndex = j;
+                    break;
+                }
+            }
+            if (winnerLineIndex !== null && winnerLineIndex > 0) {
+                totalPoints++;
+                const lastShotLine = rally[winnerLineIndex - 1];
+                const match = lastShotLine.match(/\d+\.\s*([^\(]+)/);
+                if (match) {
+                    const itemsStr = match[1].trim();
+                    const items = itemsStr.split(',').map(item => item.trim());
+                    forehandWinner += items.filter(item => item.includes('f')).length;
+                    backhandWinner += items.filter(item => item.includes('b')).length;
+                }
+            }
+        }
+        return [totalPoints, forehandWinner, backhandWinner];
+    }
+
+    function runAnalysis(lines) {
+        const rallies = extractRalliesByTime(lines);
+        const [totalPoints, forehandWinner, backhandWinner] = extractLastShots(rallies);
+        const servingSideWin = analyzeServingPoint(rallies);
+        analysisResults.style.display = 'block';
+        analysisResults.innerHTML = `<strong>Analysis Results:</strong><br>
+            Total points analyzed: <b>${totalPoints}</b><br>
+            Forehand winners percentage: <b>${(forehandWinner/totalPoints*100).toFixed(2)}%</b><br>
+            Backhand winners percentage: <b>${(backhandWinner/totalPoints*100).toFixed(2)}%</b><br>
+            Serving side winning percentage: <b>${(servingSideWin*100).toFixed(2)}%</b>`;
+    }
+
+    // --- Drag & Drop UI for Converter ---
+    const convertDropZone = document.getElementById('convertDropZone');
+    const convertFileInput = document.getElementById('convertFileInput');
+    const convertResults = document.getElementById('convertResults');
+
+    convertDropZone.addEventListener('click', () => convertFileInput.click());
+    convertDropZone.addEventListener('dragover', e => {
+        e.preventDefault();
+        convertDropZone.style.background = '#C8E6C9';
+    });
+    convertDropZone.addEventListener('dragleave', e => {
+        convertDropZone.style.background = '#e8f5e8';
+    });
+    convertDropZone.addEventListener('drop', e => {
+        e.preventDefault();
+        convertDropZone.style.background = '#e8f5e8';
+        handleConvertFile(e.dataTransfer.files[0]);
+    });
+    convertFileInput.addEventListener('change', e => {
+        if (convertFileInput.files.length) handleConvertFile(convertFileInput.files[0]);
+    });
+
+    function handleConvertFile(file) {
+        if (!file || !file.name.endsWith('.txt')) {
+            convertResults.style.display = 'block';
+            convertResults.innerHTML = '<span style="color:red">Please upload a .txt file.</span>';
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const lines = e.target.result.split(/\r?\n/);
+            const output = runConvert(lines);
+            downloadConvertedFile(output, `converted_${file.name}.txt`);
+            convertResults.style.display = 'block';
+            convertResults.innerHTML = '<strong>Conversion complete!</strong> Your file has been downloaded.';
+        };
+        reader.readAsText(file);
+    }
+
+    // --- Converter Logic (JS port of your Python) ---
+    function transformBlock(blockLines) {
+        const result = [];
+        for (let line of blockLines) {
+            line = line.trim();
+            // Handle "s" shots
+            let sMatch = line.match(/\d+\.\s+[XY]s([A-Z])/);
+            if (sMatch) {
+                const letter = sMatch[1];
+                if (["A", "E"].includes(letter)) result.push("4");
+                else if (["B", "D"].includes(letter)) result.push("5");
+                else if (letter === "C") result.push("6");
+                else result.push("?");
+                continue;
+            }
+            // Handle other shot types
+            let shotMatch = line.match(/\d+\.\s+[XY]([a-z]+)([A-Z])(\d+)/);
+            if (shotMatch) {
+                let shotCode = shotMatch[1].replace("r", "s");
+                let letter = shotMatch[2];
+                let number = parseInt(shotMatch[3]);
+                result.push(shotCode);
+                if (number >= 5) {
+                    if (["A", "B"].includes(letter)) result.push("1");
+                    else if (["E", "D"].includes(letter)) result.push("3");
+                    else if (letter === "C") result.push("2");
+                    else result.push("?");
+                } else {
+                    if (["D", "E"].includes(letter)) result.push("1");
+                    else if (["A", "B"].includes(letter)) result.push("3");
+                    else if (letter === "C") result.push("2");
+                    else result.push("?");
+                }
+                continue;
+            }
+            // Endings like XV, YF
+            if (line.endsWith("V")) result.push("*");
+            else if (line.endsWith("F")) result.push("#");
+        }
+        return result.join("");
+    }
+
+    function runConvert(lines) {
+        const outputLines = [];
+        let currentTime = null;
+        let currentBlock = [];
+        for (let line of lines) {
+            line = line.trim();
+            if (line.startsWith("# Time:")) {
+                if (currentTime !== null) {
+                    const transformed = transformBlock(currentBlock);
+                    outputLines.push(`${currentTime} ${transformed}`);
+                }
+                currentTime = line;
+                currentBlock = [];
+            } else if (line) {
+                currentBlock.push(line);
+            }
+        }
+        // Final block
+        if (currentTime !== null) {
+            const transformed = transformBlock(currentBlock);
+            outputLines.push(`${currentTime} ${transformed}`);
+        }
+        return outputLines.join("\n");
+    }
+
+    function downloadConvertedFile(content, filename) {
+        const blob = new Blob([content], {type: 'text/plain'});
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+    </script>
 </body>
 </html>
 
