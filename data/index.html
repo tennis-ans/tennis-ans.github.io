@@ -6,6 +6,7 @@
 <title>TANS Match Data Repository</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../static/style.css">
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <div class="container">
@@ -42,6 +43,13 @@
 </div>
 
 <script>
+const { createClient } = supabase;
+const supabaseUrl = "https://vspbkgtxkjnayyivmeqy.supabase.co"; 
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZzcGJrZ3R4a2puYXl5aXZtZXF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgwNjY4MDksImV4cCI6MjA3MzY0MjgwOX0.r6_lgnvnC6v_7yfEJ9fPOPvr_CM6GPync2OWENnoqQ0";
+const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
+
+const bucketName = "charted_data";
+
 const fileInput = document.getElementById('fileInput');
 const selectedFileName = document.getElementById('selectedFileName');
 const list = document.querySelector('.matches-list');
@@ -55,78 +63,116 @@ fileInput.addEventListener('change', () => {
   selectedFileName.innerText = fileInput.files.length ? `Selected: ${fileInput.files[0].name}` : '';
 });
 
-function loadFiles() {
-  fetch('/files')
-    .then(res => res.json())
-    .then(async files => {
-      list.innerHTML = '';
-      const years = new Set();
-      let latest = 0;
+async function loadFiles() {
+  const { data, error } = await supabaseClient.storage.from(bucketName).list("uploads", { limit: 100 });
+  if (error) {
+    console.error("Error loading files:", error);
+    return;
+  }
 
-      for (const file of files) {
-        const url = file.file_url || file.url;
-        let eventName = file.name;
-        let videoUrl = null;
+  list.innerHTML = '';
+  const years = new Set();
+  let latest = 0;
 
-        // Fetch the text content of the file to parse Event & Video Url
-        try {
-          const txtRes = await fetch(url);
-          const txt = await txtRes.text();
-          const eventMatch = txt.match(/\[Event:\s*(.*?)\]/i);
-          const videoMatch = txt.match(/\[Video Url:\s*(.*?)\]/i);
-          if (eventMatch) eventName = eventMatch[1];
-          if (videoMatch) videoUrl = videoMatch[1];
-        } catch (e) {
-          console.warn('Failed to fetch file for parsing:', file.name);
-        }
+  for (const file of data) {
+    const { data: urlData } = supabaseClient.storage.from(bucketName).getPublicUrl(`uploads/${file.name}`);
+    const url = urlData.publicUrl;
 
-        const li = document.createElement('li');
-        li.className = 'match-item';
-        li.innerHTML = `
-          <div class="match-info">
-            <a href="${url}" class="match-title" target="_blank">${eventName}</a>
-            <div class="match-meta">
-              <span class="match-year">${file.year}</span>
-            </div>
-          </div>
-          <div class="match-actions">
-            <a href="${url}" class="data-link" target="_blank">📄 View Data</a>
-            ${videoUrl ? `<a href="${videoUrl}" class="data-video" target="_blank">🎥 Watch Video</a>` : ''}
-          </div>`;
-        list.appendChild(li);
+    let eventName = file.name;
+    let videoUrl = null;
+    let year = "N/A";
 
-        if (file.year && !isNaN(file.year)) { 
-          years.add(file.year); 
-          latest = Math.max(latest, parseInt(file.year)); 
-        }
-      }
+    try {
+      const txtRes = await fetch(url);
+      const txt = await txtRes.text();
+      const eventMatch = txt.match(/\[Event:\s*(.*?)\]/i);
+      const videoMatch = txt.match(/\[Video Url:\s*(.*?)\]/i);
+      const yearMatch = txt.match(/\[Event:\s*(\d+)/i);
+      if (eventMatch) eventName = eventMatch[1];
+      if (videoMatch) videoUrl = videoMatch[1];
+      if (yearMatch) year = yearMatch[1];
+    } catch (e) {
+      console.warn("Failed to parse file:", file.name);
+    }
 
-      stats.totalFiles.innerText = files.length;
-      stats.totalYears.innerText = years.size;
-      stats.latestYear.innerText = latest || 'N/A';
-    })
-    .catch(err => console.error('Error loading files:', err));
+    const li = document.createElement('li');
+    li.className = 'match-item';
+    li.innerHTML = `
+      <div class="match-info">
+        <a href="${url}" class="match-title" target="_blank">${eventName}</a>
+        <div class="match-meta">
+          <span class="match-year">${year}</span>
+        </div>
+      </div>
+      <div class="match-actions">
+        <a href="${url}" class="data-link" target="_blank">📄 View Data</a>
+        ${videoUrl ? `<a href="${videoUrl}" class="data-video" target="_blank">🎥 Watch Video</a>` : ''}
+      </div>`;
+    list.appendChild(li);
+
+    if (year && !isNaN(year)) {
+      years.add(year);
+      latest = Math.max(latest, parseInt(year));
+    }
+  }
+
+  stats.totalFiles.innerText = data.length;
+  stats.totalYears.innerText = years.size;
+  stats.latestYear.innerText = latest || 'N/A';
 }
 
-function uploadFile() {
+async function uploadFile() {
   const status = document.getElementById('uploadStatus');
-  if (!fileInput.files.length) { status.innerText = 'Please select a .txt file.'; return; }
+  
+  if (!fileInput.files.length) { 
+    status.innerText = 'Please select a .txt file.'; 
+    status.style.color = '#d32f2f';
+    return; 
+  }
+  
   const file = fileInput.files[0];
-  const formData = new FormData();
-  formData.append('file', file);
   status.innerText = 'Uploading...';
-  fetch('/upload', { method: 'POST', body: formData })
-    .then(res => res.json())
-    .then(data => {
-      if (data.file_url) { 
-        status.innerText = 'Upload successful!'; 
-        loadFiles(); 
-      } else { 
-        status.innerText = data.error || 'Unknown error'; 
+  status.style.color = '#1976d2';
+
+  try {
+    // Generate a unique filename to avoid conflicts
+    const fileName = `${file.name}`;
+    
+    const { data, error } = await supabaseClient
+      .storage
+      .from(bucketName)
+      .upload(`uploads/${fileName}`, file, { 
+        upsert: true,
+        contentType: 'text/plain'
+      });
+
+    if (error) {
+      console.error('Upload error:', error);
+      status.innerText = `Upload failed: ${error.message}`;
+      status.style.color = '#d32f2f';
+      
+      // Provide specific guidance based on error type
+      if (error.message.includes('row-level security')) {
+        status.innerText += ' (Check storage bucket permissions)';
       }
-    })
-    .catch(() => { status.innerText = 'Upload failed!'; });
+    } else {
+      status.innerText = 'Upload successful!';
+      status.style.color = '#2E7D32';
+      
+      // Clear the file input and selected file name
+      fileInput.value = '';
+      selectedFileName.innerText = '';
+      
+      // Reload the files list
+      loadFiles();
+    }
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    status.innerText = 'Upload failed due to unexpected error';
+    status.style.color = '#d32f2f';
+  }
 }
+
 
 document.addEventListener('DOMContentLoaded', loadFiles);
 </script>
