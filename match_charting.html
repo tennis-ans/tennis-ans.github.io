@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TANS - Match Charting Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+      min-height: 100vh;
+    }
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 20px 20px;
+      margin: 20px auto;
+      max-width: 1200px;
+      padding: 40px 40px 30px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 3em;
+      font-weight: 700;
+      background: linear-gradient(135deg, #2E7D32, #4CAF50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+    .header p {
+      color: #555;
+      font-size: 1.1em;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 50px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #2E7D32;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 5px;
+    }
+    p, ul {
+      font-size: 1.05em;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    ul {
+      padding-left: 25px;
+    }
+    code {
+      background: #f1f8e9;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      color: #2E7D32;
+    }
+    pre {
+      background: #f8f9fa;
+      padding: 15px 20px;
+      border-radius: 10px;
+      border-left: 4px solid #4CAF50;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+    .placeholder {
+      background: #f1f8e9;
+      border-radius: 12px;
+      border: 2px dashed #4CAF50;
+      text-align: center;
+      padding: 40px;
+      color: #2E7D32;
+      font-weight: 500;
+      margin: 25px 0;
+    }
+    .back-link {
+      display: inline-block;
+      color: #2E7D32;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px 20px;
+      }
+      .header h1 {
+        font-size: 2.3em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="../index.html" class="back-link">← Back to TANS Home</a>
+    <h1>Match Charting Guide</h1>
+    <p>A step-by-step guide for creating and reading TANS match chartings.</p>
+  </div>
+
+  <div class="container">
+    <h2>1. Introduction</h2>
+    <p>
+      The TANS charting format encodes every point in a tennis match into concise, algebraic-like notation. 
+      Each rally is timestamped and broken down into strokes, player positions, and outcomes.
+      This guide helps you create your own charting or interpret existing ones.
+    </p>
+
+    <h2>2. Basic Structure</h2>
+    <p>A typical match chart begins with header information enclosed in brackets:</p>
+    <pre>[Event: 2025 Mutua Madrid Open Women's Singles Final]
+[Players: X = Coco Gauff, Y = Aryna Sabalenka]
+[Video Url: https://www.youtube.com/watch?v=_O-4_IJFIjQ]</pre>
+
+    <ul>
+      <li><strong>Event:</strong> Tournament name and round.</li>
+      <li><strong>Players:</strong> Defines the notations for the players. X,Y for singles and (X,Y), (Z,W) for doubles.</li>
+      <li><strong>Video Url:</strong> Link to the match source for reference.</li>
+    </ul>
+
+    <h2>3. Rally Format</h2>
+    <p>
+      Each rally starts with a <code># Time</code> line indicating when the point begins in the video. 
+      The following numbered lines describe each stroke in sequence. The rally ends with the point outcome marker.
+    </p>
+
+    <pre># Time: 1:47
+1. XsA6, (D0, A9) 
+2. YfD2, (C1, A9)
+3. XfB7, (E0, A9)
+4. YfD6, (D0, B9)
+5. XfB6, (D0, C9)
+6. YfA1, (C0, C9)
+YV</pre>
+
+    <ul>
+      <li><code>1.</code> – Stroke number within the rally.</li>
+      <li><code>XsA6</code> – The player (<code>X</code>), stroke type and target coordinates (<code>A6</code>).</li>
+      <li><code>(D0, A9)</code> – Positions of the players when the shot was hit.</li>
+      <li><code>YV</code> – Rally winner (<code>Y</code>) with result.</li>
+    </ul>
+
+<h2>4. Notations</h2>
+
+<p>
+  The TANS charting system uses concise symbolic encodings to represent shots, directions, player positions, and outcomes.
+  This section explains each encoding in detail.
+</p>
+<h3>4.0 Court Partition</h3>
+<img src="static/TennisCourt.png" 
+     alt="Match Partition" 
+     style="width:300px; height:auto; border-radius:12px;">
+
+<h3>4.1 Shot Type Encoding</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95em;">
+  <thead style="background:#E8F5E9; color:#1B5E20;">
+    <tr>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid #C8E6C9;">Code</th>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid #C8E6C9;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:8px;">s</td><td style="padding:8px;">Serve</td></tr>
+    <tr><td style="padding:8px;">f</td><td style="padding:8px;">Forehand groundstroke</td></tr>
+    <tr><td style="padding:8px;">b</td><td style="padding:8px;">Backhand groundstroke</td></tr>
+    <tr><td style="padding:8px;">v</td><td style="padding:8px;">Volley</td></tr>
+    <tr><td style="padding:8px;">c</td><td style="padding:8px;">Slice</td></tr>
+    <tr><td style="padding:8px;">o</td><td style="padding:8px;">Overhead (smash)</td></tr>
+    <tr><td style="padding:8px;">l</td><td style="padding:8px;">Lob</td></tr>
+    <tr><td style="padding:8px;">d</td><td style="padding:8px;">Drop shot</td></tr>
+  </tbody>
+</table>
+
+<h3>4.2 Extra Directional Notations</h3>
+<p>
+  When the ball is intercepted by a volleyer or the shot's intent is important to record,
+  an additional character can follow the shot type encoding to indicate intended direction:
+</p>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95em;">
+  <thead style="background:#E8F5E9; color:#1B5E20;">
+    <tr>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid #C8E6C9;">Code</th>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid #C8E6C9;">Direction</th>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid #C8E6C9;">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:8px;">i</td><td style="padding:8px;">Down the line</td><td style="padding:8px;"><code>WbiB6</code> → Backhand down the line</td></tr>
+    <tr><td style="padding:8px;">x</td><td style="padding:8px;">Cross court</td><td style="padding:8px;"><code>WbxB6</code> → Backhand cross court</td></tr>
+    <tr><td style="padding:8px;">m</td><td style="padding:8px;">Down the middle</td><td style="padding:8px;"><code>WbmB6</code> → Backhand down the middle</td></tr>
+  </tbody>
+</table>
+
+<h3>4.3 Player Position Encoding</h3>
+<p>
+  Player positions are recorded as tuples showing their court locations immediately before each shot:
+</p>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95em;">
+  <thead style="background:#E8F5E9; color:#1B5E20;">
+    <tr>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid #C8E6C9;">Format</th>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid #C8E6C9;">Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:8px;"><code>(X, Y)</code></td><td style="padding:8px;">Singles – positions of Player X and Player Y</td></tr>
+    <tr><td style="padding:8px;"><code>(X, Y, Z, W)</code></td><td style="padding:8px;">Doubles – positions of all four players</td></tr>
+  </tbody>
+</table>
+
+<h3>4.4 Point Ending Encoding</h3>
+<p>
+  Each rally ends with a marker denoting the winner and outcome type:
+</p>
+<table style="width:100%; border-collapse:collapse; margin:15px 0; font-size:0.95em;">
+  <thead style="background:#E8F5E9; color:#1B5E20;">
+    <tr>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid #C8E6C9;">Code</th>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid #C8E6C9;">Meaning</th>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid #C8E6C9;">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:8px;"><code>V</code></td><td style="padding:8px;">Winner point</td><td style="padding:8px;"></td></tr>
+    <tr><td style="padding:8px;"><code>E</code></td><td style="padding:8px;">Forced error of opponent</td><td style="padding:8px;"></td></tr>
+    <tr><td style="padding:8px;"><code>U</code></td><td style="padding:8px;">Unforced error of opponent</td><td style="padding:8px;"></td></tr>
+    <tr><td style="padding:8px;"><code>n</code></td><td style="padding:8px;">Error type – net</td><td style="padding:8px;"><code>YU(n)</code> → Y loses with unforced net error</td></tr>
+    <tr><td style="padding:8px;"><code>w</code></td><td style="padding:8px;">Error type – wide</td><td style="padding:8px;"><code>XE(w)</code> → X wins by opponent's forced wide error</td></tr>
+    <tr><td style="padding:8px;"><code>h</code></td><td style="padding:8px;">Error type – long (high)</td><td style="padding:8px;"><code>YU(h)</code> → Y loses with unforced long error</td></tr>
+  </tbody>
+</table>
+
+    <h2>5. Charting Tips</h2>
+    <div class="tip">
+      <ul>
+        <li>Mark timestamps precisely when a rally starts.</li>
+        <li>Use video slow-motion to confirm landing positions.</li>
+        <li>Double-check coordinate consistency across rallies.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
