@@ -32,14 +32,13 @@
 </div>
 
 <div class="upload-section">
-  <h3>Upload Charted Match Data (.txt)</h3>
-  <label for="fileInput" style="display:block; margin-bottom:18px; cursor:pointer;">
-    <span style="display:inline-block; background:#e8f5e8; color:#2E7D32; border-radius:8px; padding:12px 24px; font-weight:500; font-size:1em; box-shadow:0 2px 8px rgba(76,175,80,0.08);">Choose File</span>
-    <input type="file" id="fileInput" accept=".txt" style="display:none;">
-  </label>
-  <button onclick="uploadFile()">Upload to Repository</button>
-  <div id="selectedFileName" style="margin-bottom:10px; color:#333; font-size:0.98em; font-weight:500;"></div>
-  <div id="uploadStatus" style="margin-top:10px; color:#2E7D32; font-weight:600; font-size:1em;"></div>
+  <h3>Submit Charted Match Data</h3>
+  <p style="margin-bottom: 15px; color: #333;">
+    To contribute new charted match data, upload through the Google Form 
+    <a href="https://forms.gle/iZaqwJ4RrhWDk65m6" 
+       style="color: #1976d2; font-weight: 600; text-decoration: underline;">
+       here.</a>
+  </p>
 </div>
 
 <script>
@@ -120,59 +119,6 @@ async function loadFiles() {
   stats.totalYears.innerText = years.size;
   stats.latestYear.innerText = latest || 'N/A';
 }
-
-async function uploadFile() {
-  const status = document.getElementById('uploadStatus');
-  
-  if (!fileInput.files.length) { 
-    status.innerText = 'Please select a .txt file.'; 
-    status.style.color = '#d32f2f';
-    return; 
-  }
-  
-  const file = fileInput.files[0];
-  status.innerText = 'Uploading...';
-  status.style.color = '#1976d2';
-
-  try {
-    // Generate a unique filename to avoid conflicts
-    const fileName = `${file.name}`;
-    
-    const { data, error } = await supabaseClient
-      .storage
-      .from(bucketName)
-      .upload(`uploads/${fileName}`, file, { 
-        upsert: true,
-        contentType: 'text/plain'
-      });
-
-    if (error) {
-      console.error('Upload error:', error);
-      status.innerText = `Upload failed: ${error.message}`;
-      status.style.color = '#d32f2f';
-      
-      // Provide specific guidance based on error type
-      if (error.message.includes('row-level security')) {
-        status.innerText += ' (Check storage bucket permissions)';
-      }
-    } else {
-      status.innerText = 'Upload successful!';
-      status.style.color = '#2E7D32';
-      
-      // Clear the file input and selected file name
-      fileInput.value = '';
-      selectedFileName.innerText = '';
-      
-      // Reload the files list
-      loadFiles();
-    }
-  } catch (err) {
-    console.error('Unexpected error:', err);
-    status.innerText = 'Upload failed due to unexpected error';
-    status.style.color = '#d32f2f';
-  }
-}
-
 
 document.addEventListener('DOMContentLoaded', loadFiles);
 </script>

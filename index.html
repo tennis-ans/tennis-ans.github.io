@@ -406,7 +406,7 @@
             // Handle other shot types
             let shotMatch = line.match(/\d+\.\s+[XY]([a-z]+)([A-Z])(\d+)/);
             if (shotMatch) {
-                let shotCode = shotMatch[1].replace("r", "s");
+                let shotCode = shotMatch[1].replace("r", "s").replace("c", "r");
                 let letter = shotMatch[2];
                 let number = parseInt(shotMatch[3]);
                 result.push(shotCode);
