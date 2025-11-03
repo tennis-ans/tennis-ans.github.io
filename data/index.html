@@ -58,18 +58,12 @@ const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
 
 const bucketName = "charted_data";
 
-const fileInput = document.getElementById('fileInput');
-const selectedFileName = document.getElementById('selectedFileName');
 const list = document.querySelector('.matches-list');
 const stats = {
   totalFiles: document.getElementById('totalFiles'),
   totalYears: document.getElementById('totalYears'),
   latestYear: document.getElementById('latestYear')
 };
-
-fileInput.addEventListener('change', () => {
-  selectedFileName.innerText = fileInput.files.length ? `Selected: ${fileInput.files[0].name}` : '';
-});
 
 async function loadFiles() {
   const { data, error } = await supabaseClient.storage.from(bucketName).list("uploads", { limit: 100 });
