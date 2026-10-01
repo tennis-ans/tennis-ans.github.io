@@ -1,34 +1,37 @@
-import os
+"""Build a standalone index of local chartings without replacing the live library.
+
+The public match library (index.html) loads shared files from Supabase. This
+script is only for previewing .txt files stored next to it.
+"""
+
+from html import escape
+from pathlib import Path
 import re
+from urllib.parse import quote, urlparse
 
-html_lines = [
-    "<html>",
-    "  <head>",
-    "    <title>Repository for TANS Datas</title>",
-    "  </head>",
-    "  <body>",
-    "    <h1>Repository for charted TANS Data</h1><br>",
-    "    <ol>"
-]
 
-# Go through all .txt files in the current folder
-for filename in sorted(os.listdir(".")):
-    if filename.endswith(".txt"):
-        with open(filename, "r", encoding="utf-8") as f:
-            content = f.read()
-            event_match = re.search(r"\[Event:\s*(.*?)\]", content)
-            url_match = re.search(r"\[Video Url:\s*(.*?)\]", content)
-            event_name = event_match.group(1) if event_match else filename
-            video_url = url_match.group(1) if url_match else "#"
-            
-            html_lines.append(f'      <li><a href="{filename}">{event_name}</a> — <a href="{video_url}">[Match Video]</a></li>')
+data_dir = Path(__file__).resolve().parent
+rows = []
+for charting in sorted(data_dir.glob("*.txt")):
+    content = charting.read_text(encoding="utf-8")
+    event = re.search(r"\[Event:\s*(.*?)\]", content, re.IGNORECASE)
+    video = re.search(r"\[Video Url:\s*(.*?)\]", content, re.IGNORECASE)
+    title = escape(event.group(1) if event else charting.stem)
+    filename = quote(charting.name)
+    video_link = ""
+    if video:
+        url = video.group(1).strip()
+        if urlparse(url).scheme in {"http", "https"}:
+            video_link = f' — <a href="{escape(url, quote=True)}">Match video</a>'
+    rows.append(f'<li><a href="{filename}">{title}</a>{video_link}</li>')
 
-html_lines += [
-    "    </ol>",
-    "  </body>",
-    "</html>"
-]
-
-# Write to an output file
-with open("index.html", "w", encoding="utf-8") as f:
-    f.write("\n".join(html_lines))
+page = """<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local TANS chartings</title></head>
+<body><h1>Local TANS chartings</h1><p><a href="index.html">Public match library</a></p>
+<ol>""" + "\n".join(rows) + """</ol></body></html>
+"""
+output = data_dir / "local_chartings.html"
+output.write_text(page, encoding="utf-8")
+print(f"Wrote {output}")

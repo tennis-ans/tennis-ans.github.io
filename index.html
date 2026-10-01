@@ -65,6 +65,43 @@
             margin: 0 auto 30px;
         }
 
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 36px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .hero-intro {
+            text-align: left;
+        }
+
+        .hero-intro .description {
+            margin: 0 0 24px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hero-actions .data-link {
+            margin: 0;
+        }
+
+        .court-figure {
+            margin: 0 auto;
+            width: min(260px, 100%);
+        }
+
+        .court-figure svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 8px 12px rgba(46, 125, 50, 0.18));
+        }
         .data-link {
             display: inline-block;
             background: linear-gradient(135deg, #4CAF50, #2E7D32);
@@ -172,7 +209,12 @@
             .hero h1 {
                 font-size: 2.5em;
             }
-            
+
+            .hero-layout {
+                grid-template-columns: 1fr;
+                gap: 26px;
+            }
+
             .hero .subtitle {
                 font-size: 1.1em;
             }
@@ -193,22 +235,75 @@
     <div class="header">
         <div class="hero">
             <h1>TANS: Tennis Algebraic Notation System</h1>
-            <p class="description" style="text-align:left">TANS is a notation system for strategic analysis of tennis games, 
-                inspired by the algebraic notation system of chess. Its concise encoding describes the positions of players 
-                and the tennis ball, stroke type, point results, etc. It can be used for traditional statistical analysis, 
-                translation to other tennis descriptions, such as TennisAbstract. It also lays the foundation for AI-based 
-                strategy analysis for tennis. 
-                The paper describing TANS is published in <a href="https://formal-analysis.com/isace/2025/">the 2nd 
-                    International Sports Analytics Conference and Exhibition (ISACE).</a> and won the Distinguished Paper Award 🎉.
-                <br><br>
-                <b>Publication:</b><br>
-                Yuexi Song, Chuanfei Li, Hao Cao, Ling Wu, Huanhuan Zheng, and Zhenkai Liang. "TANS: A Chess-Inspired 
-                Notation System for Strategy Analysis of Tennis Games. In <i>the 2nd 
-                    International Sports Analytics Conference and Exhibition (ISACE)</i>, Shanghai, September 2025. (Distinguished Paper Award)</br>
-                    [<a href="publications/ISACE25-TANS.pdf">Paper</a>]
-    
-            </p>
-            <a href="data" class="data-link">📊 Browse Match Data</a>
+            <div class="hero-layout">
+                <div class="hero-intro">
+                    <p class="description">TANS is a notation system for strategic analysis of tennis games,
+                        inspired by the algebraic notation system of chess. It encodes the player positions, ball positions. It can be used for traditional statistical analysis,
+                        translation to other tennis descriptions, such as TennisAbstract. It also lays the foundation for AI-based
+                        strategy analysis for tennis.
+                        TANS began with research on a shared notation for the game and now supports work on tactical analysis and strategy recommendations.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="data" class="data-link">📊 Browse Match Data</a>
+                        <a href="https://forms.gle/iZaqwJ4RrhWDk65m6" class="data-link" target="_blank" rel="noopener noreferrer">🎾 Upload a Charting</a>
+                    </div>
+                </div>
+                <figure class="court-figure">
+                    <svg viewBox="0 0 230 430" role="img" aria-labelledby="tans-court-title" xmlns="http://www.w3.org/2000/svg">
+                        <title id="tans-court-title">TANS court with solid tennis lines, dotted coordinate segments, labels A through E and 0 through 9, and a ball at D6</title>
+                        <rect x="30" y="10" width="180" height="390" fill="#43a047"/>
+                        <path d="M68.9 10V400 M103.6 10V400 M136.4 10V400 M171.1 10V400
+                                 M30 33.4H210 M30 68.5H210 M30 119.2H210 M30 169.9H210
+                                 M30 240.1H210 M30 290.8H210 M30 341.5H210 M30 376.6H210"
+                              fill="none" stroke="#e8f5e9" stroke-width="1.25" stroke-dasharray="2 4" opacity="0.75"/>
+                        <g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="square">
+                            <rect x="30" y="10" width="180" height="390"/>
+                            <line x1="52.5" y1="10" x2="52.5" y2="400"/>
+                            <line x1="187.5" y1="10" x2="187.5" y2="400"/>
+                            <line x1="52.5" y1="100" x2="187.5" y2="100"/>
+                            <line x1="52.5" y1="310" x2="187.5" y2="310"/>
+                            <line x1="120" y1="100" x2="120" y2="310"/>
+                            <line x1="30" y1="205" x2="210" y2="205" stroke-width="3"/>
+                        </g>
+                        <g fill="#2E7D32" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="end">
+                            <text x="22" y="24">9</text><text x="22" y="47">8</text>
+                            <text x="22" y="90">7</text><text x="22" y="149">6</text>
+                            <text x="22" y="192">5</text><text x="22" y="224">4</text>
+                            <text x="22" y="267">3</text><text x="22" y="326">2</text>
+                            <text x="22" y="369">1</text><text x="22" y="396">0</text>
+                        </g>
+                        <g fill="#2E7D32" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+                            <text x="49.5" y="420">A</text><text x="86.5" y="420">B</text>
+                            <text x="120" y="420">C</text><text x="153.5" y="420">D</text>
+                            <text x="190.5" y="420">E</text>
+                        </g>
+                        <circle cx="153.5" cy="147" r="7" fill="#d9f27a" stroke="#fff" stroke-width="2"/>
+                        <rect x="163" y="131" width="25" height="17" rx="3" fill="#fff"/>
+                        <text x="175.5" y="143" fill="#2E7D32" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle">D6</text>
+                    </svg>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div class="tools-section">
+        <h2>🎾 Contribute to TANS</h2>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <h3>📖 Learn to Chart</h3>
+                <p>Use the match charting guide to record strokes, positions, and point outcomes in TANS notation.</p>
+                <a href="static/match_charting.html" class="tool-link">Read the Guide</a>
+            </div>
+            <div class="tool-card">
+                <h3>📂 Explore Shared Matches</h3>
+                <p>Browse chartings contributed to the match data repository and study each rally.</p>
+                <a href="data" class="tool-link">Browse Chartings</a>
+            </div>
+            <div class="tool-card">
+                <h3>🤝 Share Your Charting</h3>
+                <p>Charted a match? Submit your TANS .txt file through our contribution form to share it with others.</p>
+                <a href="https://forms.gle/iZaqwJ4RrhWDk65m6" class="tool-link" target="_blank" rel="noopener noreferrer">Upload a Charting</a>
+            </div>
         </div>
     </div>
 
@@ -243,6 +338,21 @@
                 <h3>💻 TANS API</h3>
                 <p>Download the TANS API package for integrating TANS parsing and analysis into your own applications.</p>
                 <a href="https://drive.google.com/uc?export=download&amp;id=12Zvc6Xw16wzPjViZo8wBFwERzZQxbt5Y" class="tool-link" target="_blank" rel="noopener noreferrer">Download TANS API (.zip)</a>
+            </div>
+        </div>
+    </div>
+    <div class="tools-section">
+        <h2>📚 Research</h2>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <h3>TANS: A Chess-Inspired Notation System for Strategy Analysis of Tennis Games</h3>
+                <p>Yuexi Song, Chuanfei Li, Hao Cao, Ling Wu, Huanhuan Zheng, and Zhenkai Liang. In <i>the 2nd International Sports Analytics Conference and Exhibition (ISACE)</i>, Shanghai, 2025. Distinguished Paper Award 🎉</p>
+                <a href="publications/ISACE25-TANS.pdf" class="tool-link">Read TANS Paper</a>
+            </div>
+            <div class="tool-card">
+                <h3>TANS-Agent: Structured, Multi-agent Tactical Reasoning for Tennis Match Analysis and Strategy Recommendation</h3>
+                <p>Emma Y. Cai, Yuexi Song, Chuanfei Li, and Zhenkai Liang. In <i>Sports Analytics: Third International Conference, ISACE 2026, Vancouver, BC, Canada, June 1–2, 2026, Proceedings</i>, pages 198–214.</p>
+                <a href="https://doi.org/10.1007/978-3-032-27272-0_14" class="tool-link" target="_blank" rel="noopener noreferrer">Read TANS-Agent Paper</a>
             </div>
         </div>
     </div>
